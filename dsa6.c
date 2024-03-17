@@ -55,6 +55,32 @@ void del(char q[], int *f, int *cnt)
     (*f) = ((*f) + 1) % Max;
     (*cnt)--;
 }
+
+// output 
+// 1: Insert 
+// 2: Delete
+// 3: Display 
+// 4: Exit Enter choice
+// 1
+// enter the ele
+// 9
+// 1: Insert
+// 2: Delete
+// 3: Display
+// 4: Exit
+// Enter choice
+// 1
+// enter the ele
+// 8
+// 1: Insert
+// 2: Delete
+// 3: Display
+// 4: Exit
+// Enter choice
+// 3
+// Circular Queue content
+// 09
+    
 void display(char q[], int f, int cnt)
 {
     int i, j;
