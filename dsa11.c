@@ -75,6 +75,27 @@ void printBFS(struct Graph graph, int start)
     printf("Nodes reachable from City %d using BFS:\n", start + 1);
     BFS(graph, start, visited);
 }
+
+// output
+
+// Enter the number of cities: 3
+// Enter connections between cities (0 for no connection, 1 for connection):
+// Is there a connection between city 1 and city 2? (1/0): 1
+// Is there a connection between city 1 and city 3? (1/0): 1
+// Is there a connection between city 2 and city 1? (1/0): 1
+// Is there a connection between city 2 and city 3? (1/0): 1
+// Is there a connection between city 3 and city 1? (1/0): 1
+// Is there a connection between city 3 and city 2? (1/0): 0
+// Enter the starting city to explore: 1 
+// Nodes reachable from City 1 using DFS: 
+// City 1 is reachable.
+// City 2 is reachable.
+// City 3 is reachable.
+// Nodes reachable from City 1 using BFS: City 40 is reachable.
+// City 1 is reachable.
+// City 2 is reachable.
+// City 3 is reachable.
+
 int main()
 {
     int N, startCity;
