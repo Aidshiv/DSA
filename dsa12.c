@@ -40,6 +40,18 @@ void displayHashTable(struct MemoryLocation hashTable[], int m)
         }
     }
 }
+
+// output 
+
+// Enter the number of memory locations (m) in the hash table: 3
+// Enter the number of employee records (n): 2
+// Enter the 2 employee records (each record includes a 4-digit key):
+// 2345
+// 3456
+// Hash Table Contents:
+// Location 1: Key: 3456
+// Location 2: Key: 2345
+
 int main()
 {
     int m;
