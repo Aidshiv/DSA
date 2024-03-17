@@ -135,6 +135,33 @@ void evaluate(NODE *he)
         result = result + (he->cf * pow(x, he->px) * pow(y, he->py) * pow(z, he->pz));
         he = he->link;
     }
+
+// output  
+// 1. Evaluate
+// 2. Polynomial addition 3. Exit
+// Choice: 1
+// Enter number of terms
+// 2
+// Enter coef, xexp, yexp and zexp of the term
+// 6
+// 2
+// 2
+// 1
+// Enter coef, xexp, yexp and zexp of the term
+// -4
+// Θ
+// 1
+// 5
+// Terms in polynomial are...
+// (-4x^0y^1z^5) +(6x^2y^2z^1) + Enter value of x, y and z
+// 1
+// 2
+// 3
+// Evaluation of polynomial is -1872
+// 1. Evaluate
+// 2. Polynomial addition
+// 3. Exit
+    
     printf("\nPolynomial result is: %f", result);
 }
 void main()
