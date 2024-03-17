@@ -19,6 +19,16 @@ int main()
     read(cal);
     display(cal);
 }
+//output
+// Enter name of the day Monday 
+// Enter date of the day 4
+// Enter description of the activity Assignment
+// Enter name of the day Wednesday
+// Enter date of the day 6
+// Enter description of the activity AICTE
+// Enter name of the day Tuesday
+// Enter date of the day 5
+// Enter description of the activity Project
 Plan *create()
 {
     Plan *t = (Plan *)malloc(sizeof(Plan) * 7);
