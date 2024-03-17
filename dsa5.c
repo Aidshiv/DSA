@@ -2,23 +2,19 @@
 #include <stdlib.h>
 #include <string.h>
 #define MAX_STACK_SIZE 100
-// Structure to represent a stack
 struct Stack
 {
     int top;
     int items[MAX_STACK_SIZE];
 };
-// Function to initialize the stack
 void initialize(struct Stack *stack)
 {
     stack->top = -1;
 }
-// Function to check if the stack is empty
 int isEmpty(struct Stack *stack)
 {
     return stack->top == -1;
 }
-// Function to push an element onto the stack
 void push(struct Stack *stack, int item)
 {
     if (stack->top == MAX_STACK_SIZE - 1)
@@ -28,7 +24,6 @@ void push(struct Stack *stack, int item)
     }
     stack->items[++stack->top] = item;
 }
-// Function to pop an element from the stack
 int pop(struct Stack *stack)
 {
     if (isEmpty(stack))
@@ -38,7 +33,6 @@ int pop(struct Stack *stack)
     }
     return stack->items[stack->top--];
 }
-// Function to evaluate a postfix expression
 int evaluatePostfix(char *expression)
 {
     struct Stack stack;
@@ -106,6 +100,9 @@ int main()
     printf("Result: %d\n", result);
     return 0;
 }
+// output
+// Postfix expression: 56*
+// Result: 30
 
 //***************5b*****************************
 
@@ -118,6 +115,17 @@ void hanoi(int n, char S, char T, char D)
     printf("Move disc %d from %c to %c\n", n, S, D);
     hanoi(n - 1, T, S, D);
 }
+
+// output
+// Enter number of discs: 3
+// Move disc 1 from A to C
+// Move disc 2 from A to B
+// Move disc 1 from C to B
+// Move disc 3 from A to C
+// Move disc 1 from B to A 
+// Move disc 2 from B to C 
+// Move disc 1 from A to C
+
 int main()
 {
     int n;
