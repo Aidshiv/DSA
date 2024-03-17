@@ -25,6 +25,13 @@ int patternExists(const char *str, const char *pattern)
         i++;
     }
     return -1;
+    ﻿
+// output
+// Enter the main string: rnsitrnsitrnsit
+// Enter the pattern string:r
+// Enter the replace string:R
+// Pattern not found in the main string. 
+// Modified String: RnsitRnsitRnsit
 }
 void findAndReplace(char *str, const char *pattern, const char *replace)
 {
