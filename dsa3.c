@@ -1,21 +1,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 #define MAX 100
-
-// Define a stack data structure
 struct Stack
 {
     int data[MAX];
     int top;
 };
-
-// Function to initialize the stack
 void initialize(struct Stack *stack)
 {
     stack->top = -1;
 }
-
-// Function to push an element onto the stack
 void push(struct Stack *stack, int value)
 {
     if (stack->top == MAX - 1)
@@ -28,8 +22,6 @@ void push(struct Stack *stack, int value)
         printf("Pushed %d onto the stack.\n", value);
     }
 }
-
-// Function to pop an element from the stack
 int pop(struct Stack *stack)
 {
     if (stack->top == -1)
@@ -42,8 +34,6 @@ int pop(struct Stack *stack)
         return stack->data[stack->top--];
     }
 }
-
-// Function to check if a string is a palindrome using a stack
 bool isPalindrome(const char *str)
 {
     struct Stack stack;
@@ -66,7 +56,33 @@ bool isPalindrome(const char *str)
     return true;
 }
 
-// Function to display the stack's status
+// output
+// Stack Operations Menu: 1. Push Element
+// 2. Pop Element
+// 3. Check Palindrome
+// 4. Display Stack
+// 5. Exit
+// Enter your choice: 1
+// Enter an element to push onto the stack: 10 Pushed 10 onto the stack.
+// Stack Operations Menu:
+// 1. Push Element
+// 2. Pop Element
+// 3. Check Palindrome
+// 4. Display Stack
+// 5. Exit
+// Enter your choice: 1
+// Enter an element to push onto the stack: 20
+// Pushed 20 onto the stack.
+// Stack Operations Menu:
+// 1. Push Element
+// 2. Pop Element
+// 3. Check Palindrome 
+// 4. Display Stack 
+// 5. Exit
+// Enter your choice: 4 
+// Stack Contents:
+// 10
+// 20
 void displayStack(const struct Stack *stack)
 {
     printf("Stack Contents:\n");
@@ -75,7 +91,6 @@ void displayStack(const struct Stack *stack)
         printf("%d\n", stack->data[i]);
     }
 }
-
 int main()
 {
     struct Stack stack;
