@@ -120,3 +120,69 @@ def print_solution(path):
 if __name__ == "__main__":
     solution_path = best_first_search()
     print_solution(solution_path)
+
+
+/* Solution found!
+Step 0:
+Left Bank: 3 missionaries, 3 cannibals
+Boat is on the left bank
+Right Bank: 0 missionaries, 0 cannibals
+------------
+Step 1:
+Left Bank: 3 missionaries, 1 cannibals
+Boat is on the right bank
+Right Bank: 0 missionaries, 2 cannibals
+------------
+Step 2:
+Left Bank: 3 missionaries, 2 cannibals
+Boat is on the left bank
+Right Bank: 0 missionaries, 1 cannibals
+------------
+Step 3:
+Left Bank: 3 missionaries, 0 cannibals
+Boat is on the right bank
+Right Bank: 0 missionaries, 3 cannibals
+------------
+Step 4:
+Left Bank: 3 missionaries, 1 cannibals
+Boat is on the left bank
+Right Bank: 0 missionaries, 2 cannibals
+------------
+Step 5:
+Left Bank: 1 missionaries, 1 cannibals
+Boat is on the right bank
+Right Bank: 2 missionaries, 2 cannibals
+------------
+Step 6:
+Left Bank: 2 missionaries, 2 cannibals
+Boat is on the left bank
+Right Bank: 1 missionaries, 1 cannibals
+------------
+Step 7:
+Left Bank: 0 missionaries, 2 cannibals
+Boat is on the right bank
+Right Bank: 3 missionaries, 1 cannibals
+------------
+Step 8:
+Left Bank: 0 missionaries, 3 cannibals
+Boat is on the left bank
+Right Bank: 3 missionaries, 0 cannibals
+------------
+Step 9:
+Left Bank: 0 missionaries, 1 cannibals
+Boat is on the right bank
+Right Bank: 3 missionaries, 2 cannibals
+------------
+Step 10:
+Left Bank: 0 missionaries, 2 cannibals
+Boat is on the left bank
+Right Bank: 3 missionaries, 1 cannibals
+------------
+Step 11:
+Left Bank: 0 missionaries, 0 cannibals
+Boat is on the right bank
+Right Bank: 3 missionaries, 3 cannibals
+------------
+*/
+
+
