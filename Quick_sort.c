@@ -1,9 +1,7 @@
-// Program to Sort an integer array using QUICK SORT Technique
-
 #include <stdio.h>
 #include <sys/time.h>
-#include <stdlib.h> // Added for rand() function
-#include <time.h> // Added for srand() function
+#include <stdlib.h>
+#include <time.h>
 
 struct timeval t;
 
@@ -19,7 +17,7 @@ int main()
     printf("Enter the size of array\n");
     scanf("%d", &n);
 
-    srand(time(NULL)); // Initialize random number generator
+    srand(time(NULL));
     printf("Array elements are randomly generated\n");
     for (i = 0; i < n; i++)
     {
