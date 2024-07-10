@@ -7,7 +7,7 @@ Create and demonstrate how projection operators would be used:*/
 use experiment4
 
 // Create a new collection
-db.createCollection("students")
+db.createCollection("students2")
 
 
 //step2
@@ -21,7 +21,7 @@ show collections
 
 //step 3 
 // Insert documents
-db.students.insertMany([
+db.students2.insertMany([
   {
     _id: 1,
     name: "John",
@@ -59,8 +59,7 @@ db.students.insertMany([
 
 
 // $ projection operator
-db.students.find({}, { "grades.$": 1 })
-
+db.students2.find({}, { grades: 1 })
 
 
 
@@ -73,4 +72,4 @@ db.students.find({}, { grades: { $elemMatch: { score: { $gt: 80 } } } })
 //step 6
 
 // $slice projection operator
-db.students.find({}, { grades: { $slice: 2 } })
+db.students2.find({}, { grades: { $slice: 2 } })
