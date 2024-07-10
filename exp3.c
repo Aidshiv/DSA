@@ -8,7 +8,7 @@ b. Execute query selectors (Geospatial selectors, Bitwise selectors):*/
 use experiment3
 
 // Create a new collection
-db.createCollection("people")
+db.createCollection("people1")
 
 
 //step2
@@ -20,9 +20,12 @@ show dbs
 show collections
 
 
-//step 3 
+//step 3
+db.people1.createIndex({ location: "2dsphere" })
+
+//step 4
 // Insert documents
-db.people.insertMany([
+db.people1.insertMany([
   { name: "John", age: 25, gender: "male", location: { type: "Point", coordinates: [ -73.9667, 40.78 ] }, flags: 4 },
   { name: "Jane", age: 28, gender: "female", location: { type: "Point", coordinates: [ -73.9667, 40.79 ] }, flags: 2 },
   { name: "Bob", age: 40, gender: "male", location: { type: "Point", coordinates: [ -73.9667, 40.80 ] }, flags: 8 },
@@ -33,20 +36,20 @@ db.people.insertMany([
   { name: "Sarah", age: 29, gender: "female", location: { type: "Point", coordinates: [ -73.9667, 40.85 ] }, flags: 5 }
 ])
 
-//step 4
+//step 5
 
 
 // Comparison selectors
-db.people.find({ age: { $gt: 30 } })
+db.people1.find({ age: { $gt: 30 } })
 
 // Logical selectors
 db.people.find({ $and: [{ age: { $gt: 25 } }, { gender: "male" }] })
 
 
-//step 5 (b)
+//step 6 (b)
 
 // Geospatial selectors
-db.people.find({ location: { $near: { $geometry: { type: "Point", coordinates: [ -73.9667, 40.78 ] }, $maxDistance: 1000 } } })
+db.people1.find({ location: { $near: { $geometry: { type: "Point", coordinates: [ -73.9667, 40.78 ] }, $maxDistance: 1000 } } })
 
 // Bitwise selectors
-db.people.find({ flags: { $bitsAllSet: 4 } })
+db.people1.find({ flags: { $bitsAllSet: 4 } })
