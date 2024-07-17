@@ -1,63 +1,43 @@
 #include <stdio.h>
-const int MAX = 10;
-void fnTopological(int a[MAX][MAX], int n);
-int main(void)
+#include <stdlib.h>
+#define V 6
+void topologicalSortUtil(int graph[V][V], int v, int visited[], int stack[], int *top)
 {
-    int a[MAX][MAX],n;
-    int i,j;
-
-    printf("Topological Sorting Algorithm -\n");
-    printf("\nEnter the number of vertices : ");
-     scanf("%d",&n);
-
-    printf("Enter the adjacency matrix -\n");
-    for (i=0; i<n; i++) 
-        for (j=0; j<n; j++)
-            scanf("%d",&a[i][j]);
-
-    fnTopological(a,n);
-    printf("\n");
-    return 0;
+    visited[v] = 1;
+    for (int i = 0; i < V; i++)
+    {
+        if (graph[v][i] == 1 && !visited[i])
+            topologicalSortUtil(graph, i, visited, stack, top);
+    }
+    stack[(*top)++] = v;
 }
-
-void fnTopological(int a[MAX][MAX], int n)
+void topologicalSort(int graph[V][V])
 {
-    int in[MAX], out[MAX], stack[MAX], top=-1;
-    int i,j,k=0;
-
-    for (i=0;i<n;i++)   // Calculate in-degrees of all vertices
+    int visited[V];
+    int stack[V];
+    int top = 0;
+    for (int i = 0; i < V; i++)
     {
-        in[i] = 0;
-        for (j=0; j<n; j++)
-            if (a[j][i] == 1)
-                in[i]++;
+        visited[i] = 0;
     }
-
-    while(1)
+    for (int i = 0; i < V; i++)
     {
-        for (i=0;i<n;i++)   // Find vertices with 0 in-degree
-        {
-            if (in[i] == 0)
-            {
-                stack[++top] = i;   // Push vertex onto stack
-                in[i] = -1;         // Mark vertex as processed
-            }
-        }
-
-        if (top == -1)    // If no vertex was found with 0 in-degree, break
-            break;
-
-        out[k] = stack[top--];      // Pop vertex from stack
-
-        for (i=0;i<n;i++)
-        {
-            if (a[out[k]][i] == 1)
-                in[i]--;        // Reduce in-degree of adjacent vertices
-        }
-        k++;
+        if (!visited[i])
+            topologicalSortUtil(graph, i, visited, stack, &top);
     }
-
-    printf("Topological Sorting (JOB SEQUENCE) is:- \n");       // Print the topologically sorted order
-    for (i=0;i<k;i++)
-        printf("%d ",out[i] + 1);
+    for (int i = V - 1; i >= 0; i--)
+        printf("%d ", stack[i]);
+    printf("\n");
+}
+int main()
+{
+    int graph[V][V] = {
+        {0, 1, 1, 0, 0, 0},
+        {0, 0, 0, 1, 0, 0},
+        {0, 0, 0, 0, 1, 0},
+        {0, 0, 0, 0, 0, 1},
+        {0, 0, 0, 0, 0, 1},
+        {0, 0, 0, 0, 0, 0}};
+    topologicalSort(graph);
+    return 0;
 }
